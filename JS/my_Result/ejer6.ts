@@ -1,10 +1,18 @@
-const paintSquare=(num=1)=>{
-const vertice='* ** *';
-const lado =  '*    *';
-console.log(vertice)
-while (num - 1 !== 0) {
-  console.log(lado);
-  num--;
-}
-console.log(vertice);
-}
+const paintSquare = (number) => {
+  let vertice = "";
+  for (let index = 0; index < number; index++) {
+    vertice = vertice + "*";
+  }
+  const myNumber = number - 2;
+  console.log(vertice);
+  if (myNumber) {
+    for (let index = 0; index < myNumber; index++) {
+      let acount = "";
+      for (let i = 0; i < myNumber; i++) {
+        acount = acount + " ";
+      }
+      console.log(`*${acount}*`);
+    }
+  }
+  console.log(vertice);
+};
