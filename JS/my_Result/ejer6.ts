@@ -4,15 +4,25 @@ const paintSquare = (number) => {
     vertice = vertice + "*";
   }
   const myNumber = number - 2;
-  console.log(vertice);
+  let relleno = ``;
   if (myNumber) {
     for (let index = 0; index < myNumber; index++) {
       let acount = "";
       for (let i = 0; i < myNumber; i++) {
         acount = acount + " ";
       }
-      console.log(`*${acount}*`);
+      relleno =
+        index < myNumber - 1
+          ? relleno + `*${acount}*\n`
+          : relleno + `*${acount}*`;
     }
   }
-  console.log(vertice);
+  const square =`
+${vertice}
+${relleno}
+${vertice}
+`;
+  console.log(hola);
+  return square;
 };
+
