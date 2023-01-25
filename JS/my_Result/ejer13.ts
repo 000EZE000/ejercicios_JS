@@ -1,21 +1,20 @@
 
-// type array = number[]
+type array = number[]
 
-// const divideArray = (arrayN: number[], number: number): array[] | string => {
-//     if (arrayN.length === number) return [arrayN];
-//     if (arrayN.length < number) return 'error';
-//     if (arrayN.length % number === 1) {
-//         const arrayFather: array[] = []
+const divideArray = (arrayN: number[], number: number): array[] | string => {
+    if (arrayN.length === number) return [arrayN];
+    if (arrayN.length < number) return 'error';
+    let arrayfather: array[] = []
+    for (const array of arrayN) {
+        let lastArray = arrayfather.at(-1)
+        if (!lastArray || lastArray.length === number) {
+            arrayfather.push([array]);
+        } else {
+            lastArray.push(array)
+        }
 
-//         for (let i = 0; i < arrayN.length / number; i++) {
-//             let arrayChild: number[] = [];
-//             for (let o = 0; i < number; i++) {
-//                 arrayChild = [arrayN[o], ...arrayChild]
+    }
+    return arrayfather
+}
 
-//             }
-//             arrayFather.push(arrayChild)
-//         }
-//         return arrayFather
-//     }
-//     return [[]]
-// } >>>> todavia falta
+
